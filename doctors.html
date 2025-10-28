@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - One Call Away Appointment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .sidebar-transition {
+            transition: width 0.3s ease-in-out;
+        }
+        .menu-text-transition {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar-transition bg-white shadow-lg w-64 flex flex-col">
+            <!-- Logo Section -->
+            <div class="p-6 border-b border-gray-200 flex items-center justify-center">
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="42" viewBox="0 0 196 206" fill="none">
+                        <g clip-path="url(#clip0_13_155)">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M126.808 37.9684C126.805 36.6618 127.198 35.3838 127.936 34.2961C128.674 33.2084 129.725 32.36 130.955 31.8581C132.185 31.3563 133.539 31.2236 134.846 31.4768C136.153 31.7301 137.354 32.3579 138.297 33.2808C139.24 34.2038 139.882 35.3803 140.143 36.6616C140.404 37.9429 140.272 39.2713 139.763 40.4787C139.253 41.686 138.39 42.7181 137.283 43.4443C136.175 44.1705 134.873 44.5581 133.541 44.5581C132.657 44.5599 131.782 44.3907 130.965 44.0604C130.148 43.73 129.406 43.2449 128.781 42.6328C128.155 42.0207 127.659 41.2937 127.321 40.4933C126.982 39.6929 126.808 38.8349 126.808 37.9684ZM185.707 69.6857H131.899V56.4792C134.917 56.5172 137.891 55.7637 140.513 54.2967C143.135 52.8297 145.309 50.7024 146.812 48.1348C148.314 45.5673 149.09 42.6527 149.058 39.6925C149.027 36.7323 148.19 33.834 146.634 31.2975C147.798 33.5093 148.363 35.9772 148.274 38.4646C148.186 40.952 147.449 43.3755 146.131 45.5029C144.814 47.6303 142.962 49.3904 140.753 50.6143C138.543 51.8383 136.05 52.4852 133.512 52.493C130.974 52.5008 128.477 51.8693 126.259 50.6589C124.042 49.4486 122.179 47.7 120.848 45.5807C119.517 43.4614 118.764 41.0425 118.66 38.5557C118.556 36.0689 119.105 33.5976 120.254 31.3786C87.9556 8.88968 58.0437 4.08608 46.5646 10.8788C32.3537 19.2952 51.6971 37.5083 58.9819 43.4891C37.1827 22.6645 44.5089 11.3659 64.5007 14.3157C64.2471 15.1961 64.1217 16.1072 64.1282 17.022V47.5756C93.8331 70.2946 145.185 96.9512 175.994 136.341H185.804C188.531 136.334 191.145 135.268 193.074 133.376C195.002 131.485 196.089 128.921 196.096 126.246V79.7935C196.095 78.4598 195.824 77.1396 195.3 75.9087C194.777 74.6779 194.01 73.5607 193.044 72.6213C192.079 71.682 190.934 70.9391 189.675 70.4353C188.415 69.9315 187.067 69.6767 185.707 69.6857Z"
+                                fill="url(#paint0_radial_13_155)" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M185.707 76.7628H106.623C128.546 91.6472 151.96 108.602 170.089 129.251H185.763C186.579 129.243 187.359 128.921 187.935 128.354C188.511 127.787 188.836 127.02 188.839 126.22V79.7938C188.837 79.3929 188.755 78.9962 188.596 78.6266C188.438 78.257 188.206 77.9218 187.915 77.6402C187.624 77.3585 187.28 77.136 186.901 76.9855C186.522 76.8349 186.116 76.7592 185.707 76.7628Z"
+                                fill="url(#paint1_linear_13_155)" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M116.019 34.9106C102.799 26.1506 88.1116 19.7384 72.6274 15.9668C86.521 20.811 98.6485 28.8621 110.969 38.5911C110.743 41.4465 111.115 44.3172 112.064 47.0259C113.013 49.7346 114.517 52.2239 116.485 54.3402C118.453 56.4564 120.842 58.1547 123.505 59.3302C126.168 60.5057 129.048 61.1335 131.968 61.1748V56.547C129.324 56.5106 126.725 55.8685 124.379 54.6721C122.032 53.4757 120.004 51.7581 118.454 49.6563C116.905 47.5545 115.878 45.1266 115.455 42.5664C115.032 40.0063 115.225 37.3846 116.019 34.9106Z"
+                                fill="url(#paint2_radial_13_155)" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M69.1919 168.044C69.1946 169.351 68.802 170.629 68.0639 171.717C67.3257 172.804 66.2752 173.653 65.0451 174.155C63.8151 174.657 62.4609 174.789 61.1539 174.536C59.8469 174.283 58.646 173.655 57.703 172.732C56.76 171.809 56.1174 170.633 55.8565 169.351C55.5955 168.07 55.7281 166.742 56.2372 165.534C56.7464 164.327 57.6094 163.295 58.7169 162.569C59.8244 161.842 61.1267 161.455 62.4589 161.455C64.2411 161.458 65.9495 162.153 67.211 163.388C68.4725 164.623 69.1846 166.297 69.1919 168.044ZM10.2926 136.314H64.1008V149.52C61.0791 149.475 58.1 150.223 55.4723 151.687C52.8447 153.151 50.6642 155.278 49.1568 157.846C47.6494 160.415 46.87 163.333 46.8994 166.297C46.9289 169.26 47.7661 172.162 49.3242 174.702C48.2342 172.646 47.6707 170.361 47.6824 168.044C47.6793 165.847 48.1845 163.677 49.1601 161.698C50.1356 159.72 51.556 157.984 53.3144 156.621C55.0727 155.259 57.1233 154.305 59.3117 153.832C61.5001 153.36 63.7694 153.38 65.9488 153.891C68.1282 154.403 70.1609 155.392 71.894 156.785C73.6271 158.179 75.0154 159.939 75.9545 161.935C76.8935 163.93 77.3589 166.109 77.3155 168.306C77.2721 170.503 76.7212 172.662 75.7041 174.621C108.03 197.123 137.984 201.927 149.477 195.134C163.674 186.718 144.344 168.491 137.059 162.524C158.858 183.348 151.532 194.647 131.54 191.697C131.787 190.815 131.913 189.905 131.913 188.991V158.464C102.194 135.745 50.8419 109.089 20.047 69.6992H10.2374C7.50985 69.7064 4.89613 70.7722 2.96748 72.6637C1.03883 74.5552 -0.0478927 77.1186 -0.0551758 79.7936V126.219C-0.0515569 127.548 0.218965 128.864 0.740947 130.091C1.26293 131.317 2.02614 132.431 2.98702 133.368C3.9479 134.306 5.08762 135.048 6.34111 135.554C7.5946 136.059 8.9373 136.317 10.2926 136.314Z"
+                                fill="url(#paint3_radial_13_155)" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10.2927 129.223H89.3356C67.3984 114.339 43.9849 97.3841 25.8695 76.7354H10.2927C9.47525 76.7424 8.69333 77.064 8.1153 77.6309C7.53727 78.1978 7.20935 78.9647 7.20215 79.7663V126.192C7.20935 126.994 7.53727 127.761 8.1153 128.328C8.69333 128.894 9.47525 129.216 10.2927 129.223Z"
+                                fill="url(#paint4_linear_13_155)" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M79.981 171.17C93.201 179.93 107.888 186.343 123.373 190.114C109.479 185.27 97.3515 177.219 85.0308 167.49C86.1621 155.068 75.9523 145.204 64.0317 144.906V149.52C66.6776 149.556 69.2782 150.198 71.6258 151.396C73.9735 152.593 76.0033 154.312 77.5529 156.415C79.1026 158.519 80.1292 160.949 80.5508 163.511C80.9724 166.072 80.7773 168.696 79.981 171.17Z"
+                                fill="url(#paint5_radial_13_155)" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M124.531 26.3857C109.713 16.9138 96.5509 10.6624 85.1408 6.86008H121.675C124.403 6.86722 127.017 7.93301 128.945 9.82452C130.874 11.716 131.961 14.2794 131.968 16.9544V23.4765C129.262 23.7531 126.688 24.7602 124.531 26.3857ZM64.0315 182.496V189.018C64.0388 191.693 65.1255 194.256 67.0541 196.148C68.9828 198.039 71.5965 199.105 74.324 199.112H110.858C99.4483 195.31 86.2722 189.004 71.468 179.587C69.3069 181.205 66.7349 182.211 64.0315 182.496ZM131.968 136.314H158.831C131.002 86.5728 25.8 50.6473 33.5401 17.8204C36.4513 5.50695 51.628 -1.90819 77.4421 4.62741C42.8669 -8.48438 21.6609 8.53795 26.8624 27.6306C30.1323 39.6193 43.6119 53.34 64.0315 69.7534H37.1687C64.9973 119.494 170.199 155.406 162.459 188.247C159.548 200.56 144.358 207.975 118.557 201.44C153.132 214.551 174.338 197.529 169.137 178.437C165.853 166.448 152.387 152.7 131.968 136.314Z"
+                                fill="url(#paint6_radial_13_155)" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M33.5407 17.8203C25.0418 50.6472 119.868 86.5727 147.711 136.314H158.831C131.003 86.5727 25.8696 50.6472 33.5407 17.8203Z"
+                                fill="url(#paint7_radial_13_155)" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M48.2893 69.6855H37.1689C64.9975 119.426 170.199 155.338 162.459 188.179C170.945 155.352 76.1316 119.44 48.2893 69.6855Z"
+                                fill="url(#paint8_radial_13_155)" />
+                        </g>
+                        <defs>
+                            <radialGradient id="paint0_radial_13_155" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(281.113 -144.744) scale(494.387 484.866)">
+                                <stop stop-color="white" />
+                                <stop offset="0.28" stop-color="#E2E432" />
+                                <stop offset="0.8" stop-color="#37FF56" />
+                            </radialGradient>
+                            <linearGradient id="paint1_linear_13_155" x1="220.131" y1="47.1564" x2="157.596"
+                                y2="96.5867" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" />
+                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                            </linearGradient>
+                            <radialGradient id="paint2_radial_13_155" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(228.23 -89.9424) scale(260.252 255.24)">
+                                <stop stop-color="white" />
+                                <stop offset="0.28" stop-color="#E2E432" />
+                                <stop offset="0.8" stop-color="#399A48" />
+                            </radialGradient>
+                            <radialGradient id="paint3_radial_13_155" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(-85.1274 350.757) rotate(180) scale(494.387 484.866)">
+                                <stop stop-color="white" />
+                                <stop offset="0.28" stop-color="#E2E432" />
+                                <stop offset="0.8" stop-color="#2DEA4A" />
+                            </radialGradient>
+                            <linearGradient id="paint4_linear_13_155" x1="-24.1446" y1="158.857" x2="38.3902"
+                                y2="109.413" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" />
+                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                            </linearGradient>
+                            <radialGradient id="paint5_radial_13_155" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(-32.2298 295.956) rotate(180) scale(260.253 255.24)">
+                                <stop stop-color="white" />
+                                <stop offset="0.28" stop-color="#E2E432" />
+                                <stop offset="0.8" stop-color="#399A48" />
+                            </radialGradient>
+                            <radialGradient id="paint6_radial_13_155" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(98.993 -219.843) scale(500.831 491.185)">
+                                <stop stop-color="white" />
+                                <stop offset="0.5" stop-color="#26B3E8" />
+                                <stop offset="1" stop-color="#1645FF" />
+                            </radialGradient>
+                            <radialGradient id="paint7_radial_13_155" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(73.2346 87.777) scale(120.958 118.629)">
+                                <stop stop-color="white" />
+                                <stop offset="0.5" stop-color="#26B3E8" />
+                                <stop offset="1" stop-color="#3D419A" />
+                            </radialGradient>
+                            <radialGradient id="paint8_radial_13_155" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(112.335 98.1418) scale(119.123 116.829)">
+                                <stop stop-color="white" />
+                                <stop offset="0.5" stop-color="#26B3E8" />
+                                <stop offset="1" stop-color="#3D419A" />
+                            </radialGradient>
+                            <clipPath id="clip0_13_155">
+                                <rect width="196" height="206" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <span id="logoText" class="text-2xl font-bold text-blue-500 menu-text-transition">OCAA</span>
+                </div>
+            </div>
+
+            <!-- Toggle Button (Outside Logo Section) -->
+            <div class="px-6 py-3 flex justify-between items-center border-b border-gray-200">
+                <span id="menuLabel" class="text-sm font-semibold text-gray-600 menu-text">MENU</span>
+                <button id="toggleSidebar" class="text-gray-600 hover:text-blue-500 focus:outline-none transition-transform">
+                    <svg id="menuIcon" class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+           <nav class="flex-1 px-4 py-6 space-y-2">
+                <!-- Dashboard -->
+                <a href="dashboard.html" data-page="dashboard" class="nav-link active flex items-center gap-3 px-4 py-3 text-white bg-blue-500 rounded-lg transition-colors group">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                    </svg>
+                    <span class="menu-text whitespace-nowrap">Dashboard</span>
+                </a>
+
+                <!-- Appointments -->
+                <a href="appointments.html" data-page="appointments" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors group">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <span class="menu-text whitespace-nowrap">Appointments</span>
+                </a>
+
+                <!-- Doctors -->
+                <a href="doctors.html" data-page="doctors" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors group">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                    <span class="menu-text whitespace-nowrap">Doctors</span>
+                </a>
+
+                <!-- Settings -->
+                <a href="settings.html" data-page="settings" class="nav-link flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors group">
+                    <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <span class="menu-text whitespace-nowrap">Settings</span>
+                </a>
+            </nav>
+
+            <!-- Logout Button -->
+            <div class="p-4 border-t border-gray-200">
+                <button onclick="handleLogout()" class="flex items-center gap-3 w-full px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg transition-colors group justify-center">
+                    <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                    </svg>
+                    <span class="menu-text whitespace-nowrap">Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Header -->
+            <header class="bg-white shadow-sm">
+                <div class="flex items-center justify-between px-8 py-4">
+                    <div class="flex-1 max-w-2xl">
+                        <div class="relative">
+                            <input type="text" placeholder="Search" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 ml-4">
+                        <button class="relative p-2 text-gray-600 hover:bg-gray-100 rounded-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                            </svg>
+                            <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                        </button>
+                        <div class="flex items-center gap-2 text-gray-700">
+                            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            <span class="font-semibold">John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 overflow-y-auto bg-gray-50 p-8">
+                <div class="max-w-7xl mx-auto">
+                    <div class="flex items-center justify-between mb-8">
+                        <h1 class="text-3xl font-bold text-gray-800">Appointments</h1>
+                        <button class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-semibold flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                            </svg>
+                            New Appointment
+                        </button>
+                    </div>
+                    
+                    <!-- Filter Tabs -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 mb-6">
+                        <div class="flex border-b border-gray-200">
+                            <button class="px-6 py-4 text-blue-500 border-b-2 border-blue-500 font-semibold">All Appointments</button>
+                            <button class="px-6 py-4 text-gray-600 hover:text-blue-500 font-semibold">Upcoming</button>
+                            <button class="px-6 py-4 text-gray-600 hover:text-blue-500 font-semibold">Completed</button>
+                            <button class="px-6 py-4 text-gray-600 hover:text-blue-500 font-semibold">Cancelled</button>
+                        </div>
+                    </div>
+
+                    <!-- Appointments Table -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Patient Name</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Doctor</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                                    <span class="text-blue-600 font-semibold">JD</span>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="text-sm font-medium text-gray-900">John Doe</div>
+                                                    <div class="text-sm text-gray-500">+63 912 345 6789</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">Dr. Sarah Smith</div>
+                                            <div class="text-sm text-gray-500">Cardiologist</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">Oct 29, 2025</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">10:00 AM</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">Check-up</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Confirmed</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="text-blue-600 hover:text-blue-900 mr-3">View</button>
+                                            <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                                                    <span class="text-purple-600 font-semibold">JS</span>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="text-sm font-medium text-gray-900">Jane Smith</div>
+                                                    <div class="text-sm text-gray-500">+63 923 456 7890</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">Dr. Michael Johnson</div>
+                                            <div class="text-sm text-gray-500">General Physician</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">Oct 30, 2025</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">2:30 PM</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">Consultation</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Pending</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="text-blue-600 hover:text-blue-900 mr-3">View</button>
+                                            <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                                    <span class="text-green-600 font-semibold">MW</span>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="text-sm font-medium text-gray-900">Mike Wilson</div>
+                                                    <div class="text-sm text-gray-500">+63 934 567 8901</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">Dr. Emily Brown</div>
+                                            <div class="text-sm text-gray-500">Dentist</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">Oct 28, 2025</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">11:15 AM</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">Dental Cleaning</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800">Completed</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="text-blue-600 hover:text-blue-900 mr-3">View</button>
+                                            <button class="text-gray-400 cursor-not-allowed">Cancel</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
+                                                    <span class="text-pink-600 font-semibold">SD</span>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <div class="text-sm font-medium text-gray-900">Sarah Davis</div>
+                                                    <div class="text-sm text-gray-500">+63 945 678 9012</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">Dr. David Lee</div>
+                                            <div class="text-sm text-gray-500">Dermatologist</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">Nov 01, 2025</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">9:00 AM</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-sm text-gray-900">Skin Treatment</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Confirmed</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="text-blue-600 hover:text-blue-900 mr-3">View</button>
+                                            <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <div class="bg-white px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+                            <div class="text-sm text-gray-700">
+                                Showing <span class="font-medium">1</span> to <span class="font-medium">4</span> of <span class="font-medium">20</span> results
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="px-3 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</button>
+                                <button class="px-3 py-2 bg-blue-500 text-white rounded-lg text-sm font-medium">1</button>
+                                <button class="px-3 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">2</button>
+                                <button class="px-3 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">3</button>
+                                <button class="px-3 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('toggleSidebar');
+        const menuIcon = document.getElementById('menuIcon');
+        const logoText = document.getElementById('logoText');
+        const menuLabel = document.getElementById('menuLabel');
+        const menuTexts = document.querySelectorAll('.menu-text');
+        const navLinks = document.querySelectorAll('.nav-link');
+        let isCollapsed = false;
+
+        // Set active page based on current URL
+        window.addEventListener('DOMContentLoaded', () => {
+            const currentPage = window.location.pathname.split('/').pop() || 'appointments.html';
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active', 'bg-blue-500', 'text-white');
+                    link.classList.remove('text-gray-600');
+                } else {
+                    link.classList.remove('active', 'bg-blue-500', 'text-white');
+                    link.classList.add('text-gray-600');
+                }
+            });
+        });
+
+        toggleBtn.addEventListener('click', () => {
+            isCollapsed = !isCollapsed;
+            
+            if (isCollapsed) {
+                // Collapse sidebar
+                sidebar.classList.remove('w-64');
+                sidebar.classList.add('w-20');
+                logoText.classList.add('hidden');
+                menuLabel.classList.add('hidden');
+                menuTexts.forEach(text => {
+                    text.classList.add('hidden');
+                });
+                menuIcon.style.transform = 'rotate(180deg)';
+            } else {
+                // Expand sidebar
+                sidebar.classList.remove('w-20');
+                sidebar.classList.add('w-64');
+                logoText.classList.remove('hidden');
+                menuLabel.classList.remove('hidden');
+                menuTexts.forEach(text => {
+                    text.classList.remove('hidden');
+                });
+                menuIcon.style.transform = 'rotate(0deg)';
+            }
+        });
+
+        // Store sidebar state in localStorage
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                localStorage.setItem('sidebarCollapsed', isCollapsed);
+            });
+        });
+
+        // Restore sidebar state
+        const savedState = localStorage.getItem('sidebarCollapsed');
+        if (savedState === 'true') {
+            toggleBtn.click();
+        }
+
+        function handleLogout() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.removeItem('sidebarCollapsed');
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>
