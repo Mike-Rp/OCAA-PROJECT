@@ -67,6 +67,30 @@ document.addEventListener('DOMContentLoaded', function() {
         showRegister();
     });
 
+    // If redirected with ?login=1 or ?show=login, open Login tab
+    const params = new URLSearchParams(window.location.search);
+    const shouldShowLogin = params.get('login') === '1' || params.get('show') === 'login';
+    if (shouldShowLogin) {
+        showLogin();
+    }
+
+    // Show feedback for registration outcomes
+    const err = params.get('err');
+    const ok = params.get('ok');
+    if (ok === '1' && shouldShowLogin) {
+        setTimeout(() => alert('Registration successful. Please log in.'), 100);
+    } else if (err) {
+        const messages = {
+            required: 'All fields are required.',
+            nomatch: 'Passwords do not match.',
+            invalid_phone: 'Invalid phone number. Use +63 followed by digits.',
+            duplicate: 'Phone number is already registered.',
+            insert: 'Registration failed due to a database error.'
+        };
+        const msg = messages[err] || 'Something went wrong.';
+        setTimeout(() => alert(msg), 100);
+    }
+
     // Phone input
     const phoneInputs = document.querySelectorAll('.phone-input');
 
